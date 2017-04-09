@@ -4,8 +4,9 @@ from src.instrument import Instrument
 from pyo import *
 
 server = Server().boot()
-equal_tuned_instrument = Instrument('equal')
-natural_tuned_instrument = Instrument('natural')
+initial_frequency = 440
+equal_tuned_instrument = Instrument(tuning_type = 'equal', initial_root_tonality_frequency = initial_frequency)
+natural_tuned_instrument = Instrument(tuning_type = 'natural', initial_root_tonality_frequency = initial_frequency)
 #pythagorean_tuned_instrument = Instrument('pythagorean')
 
 intrument_outputs = []
@@ -13,7 +14,7 @@ intrument_outputs.append(equal_tuned_instrument.out())
 intrument_outputs.append(natural_tuned_instrument.out())
 mix = Mix(intrument_outputs, voices = 2, mul = 0.5, add = 0).out()
 
-chords = ['maj', 'min', 'maj6', 'min6', 'aug', 'dim', 'dom7', 'maj7', 'min7', 'aug7', 'dim7', '07', 'minmaj7']
+chords = ['major_third']
 
 chord_progression = 0
 duration = 3

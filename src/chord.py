@@ -1,5 +1,5 @@
 from pyo import *
-from tuner import Tuner
+from scale import Scale
 
 class Chord():
     """
@@ -54,6 +54,9 @@ class Chord():
 
         if (chord_name == 'dom7_custom'):
             return [root * scale[0], root * scale[4], root * scale[7], root * scale[7] * scale[3]]
+
+        if (chord_name == 'major_third'):
+            return [root * scale[0], root * scale[4]]
 
         raise ValueError('Unsuported chord was requested from Chord: ' + chord_name)
 

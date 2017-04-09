@@ -3,7 +3,7 @@ import time
 from src.instrument import Instrument
 from pyo import *
 
-starting_tonality = 260
+starting_tonality = 333
 server = Server().boot()
 natural_tuned_instrument = Instrument(tuning_type = 'natural', initial_root_tonality_frequency = starting_tonality)
 
@@ -16,7 +16,7 @@ minor_chords = [(0, 'min'), (5, 'min'), (7, 'min'), (0, 'min'), (5, 'min'), (11,
 chords_to_play = major_chords
 current_position = 0
 time_to_retune_instrument = 0
-original_duration = 0.60
+original_duration = 0.33
 current_duration = original_duration
 
 # Play a 1 - 4 - 5 progression twice in two alternating tonalities.

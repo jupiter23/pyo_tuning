@@ -28,7 +28,7 @@ class Instrument():
     def get_root_tonality_frequency(self):
         return self.root_tonality_frequency
 
-    def set_chord(self, chord_name = 'maj', scale_position = 1):
+    def set_chord(self, chord_name = 'maj', scale_position = 0):
         self.chord_generator.set_root_frequency(self.scale[scale_position] * self.root_tonality_frequency)
         freqs = self.chord_generator.get_chord_frequencies(chord_name)
         number_of_frequencies_in_chord = len(freqs)
