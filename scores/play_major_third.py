@@ -3,7 +3,7 @@ import time
 from src.instrument import Instrument
 from pyo import *
 
-server = Server().boot()
+server = Server(duplex=0).boot()
 initial_frequency = 440
 equal_tuned_instrument = Instrument(tuning_type = 'equal', initial_root_tonality_frequency = initial_frequency)
 natural_tuned_instrument = Instrument(tuning_type = 'natural', initial_root_tonality_frequency = initial_frequency)

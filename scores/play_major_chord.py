@@ -3,7 +3,7 @@ import time
 from src.instrument import Instrument
 from pyo import *
 
-server = Server().boot()
+server = Server(duplex=0).boot()
 equal_tuned_instrument = Instrument(tuning_type = 'equal')
 natural_tuned_instrument = Instrument(tuning_type = 'natural')
 #pythagorean_tuned_instrument = Instrument('pythagorean')

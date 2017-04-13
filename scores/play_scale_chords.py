@@ -3,7 +3,7 @@ import time
 from src.instrument import Instrument
 from pyo import *
 
-server = Server().boot()
+server = Server(duplex=0).boot()
 equal_tuned_instrument = Instrument('equal')
 natural_tuned_instrument = Instrument('natural')
 
@@ -22,10 +22,12 @@ def alternately_play_chords_from_each_tuning():
     scale_position = values_to_play[0]
     chord_name = values_to_play[1]
     if (play_natural_next == True):
+        print 'Natual'
         play_chord_natural_tuning(chord_name, scale_position, duration)
         play_natural_next = False
         current_position += 1
     else:
+        print 'Equal'
         play_chord_equal_tuning(chord_name, scale_position, duration)
         play_natural_next = True
 

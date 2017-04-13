@@ -4,7 +4,7 @@ from src.instrument import Instrument
 from pyo import *
 
 starting_tonality = 333
-server = Server().boot()
+server = Server(duplex=0).boot()
 natural_tuned_instrument = Instrument(tuning_type = 'natural', initial_root_tonality_frequency = starting_tonality)
 
 intrument_outputs = []
